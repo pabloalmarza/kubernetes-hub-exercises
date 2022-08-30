@@ -1,0 +1,20 @@
+allowVolumeExpansion: true
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+  creationTimestamp: "2022-08-30T20:10:09Z"
+  labels:
+    addon.kops.k8s.io/name: storage-aws.addons.k8s.io
+    app.kubernetes.io/managed-by: kops
+    k8s-addon: storage-aws.addons.k8s.io
+  name: kops-csi-1-21
+  resourceVersion: "8645"
+  uid: e1737d66-06a3-4149-9fdd-b4d2242a780e
+parameters:
+  encrypted: "true"
+  type: gp3
+provisioner: ebs.csi.aws.com
+reclaimPolicy: Delete
+volumeBindingMode: WaitForFirstConsumer
